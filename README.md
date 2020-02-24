@@ -1,4 +1,4 @@
-#Greasyfork Repo Generator
+# Greasyfork Repo Generator
 
 Archives a users Greasyfork account and creates a Github repo which contains each script/metadata as the `README`. See [here](https://github.com/seanbreckenridge/greasyfork) for an example output.
 
