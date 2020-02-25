@@ -1,6 +1,8 @@
 # Greasyfork Repo Generator
 
-Archives a users Greasyfork account and creates a Github repo which contains each script/metadata as the `README`. See [here](https://github.com/seanbreckenridge/greasyfork) for an example output.
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+Archives a users Greasyfork account and creates a Github repo which contains each script/metadata as the `README`. See [here](https://github.com/seanbreckenridge/greasyfork) for example output.
 
 ```
 Archives a users Greasyfork account and creates a Github repo 0.1.0
