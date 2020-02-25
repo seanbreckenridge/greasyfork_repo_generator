@@ -17,7 +17,7 @@ defmodule GreasyforkRepoGenerator.Template do
       |> Stream.map(fn us ->
         [
           "[#{Map.get(us, "script_name")}](./#{UserScript.filename(us)})",
-          "#{Map.get(us, "description")}",
+          "#{Map.get(us, "description") |> String.trim_trailing(".")}",
           "#{Map.get(us, "total_installs")}",
           "[link](#{Map.get(us, "url")})"
         ]
