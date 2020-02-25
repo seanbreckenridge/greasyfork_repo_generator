@@ -70,12 +70,12 @@ defmodule GreasyforkRepoGenerator.CLI do
     # make sure directory exists
     if File.exists?(args.options.output_dir) do
       unless File.dir?(args.options.output_dir) do
-        IO.puts(:stderr, "#{args.options.output_dir} already exists but isn't a directory")
+      IO.puts(:stderr, "#{args.options.output_dir |> Path.expand()} already exists but isn't a directory")
         exit(1)
       end
     else
       File.mkdir!(args.options.output_dir)
-      IO.puts("Created directory #{args.options.output_dir}")
+      IO.puts("Created directory #{args.options.output_dir |> Path.expand()}")
     end
 
     # create README
@@ -88,6 +88,6 @@ defmodule GreasyforkRepoGenerator.CLI do
     userscripts
     |> Enum.map(&Template.create_script(&1, args.options.output_dir))
 
-    IO.puts("Created #{userscripts |> length()} userscript files.")
+    IO.puts("Created #{userscripts |> length()} userscript files at #{args.options.output_dir |> Path.expand()}")
   end
 end

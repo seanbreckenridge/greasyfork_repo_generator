@@ -11,7 +11,9 @@ defmodule GreasyforkRepoGenerator.Template do
   def readme(userscripts) do
     userscript_table_rows_str =
       userscripts
-      |> Enum.sort(fn(us1, us2) -> Map.get(us1, "total_installs") >= Map.get(us2, "total_installs") end)
+      |> Enum.sort(fn us1, us2 ->
+        Map.get(us1, "total_installs") >= Map.get(us2, "total_installs")
+      end)
       |> Stream.map(fn us ->
         [
           "[#{Map.get(us, "script_name")}](./#{UserScript.filename(us)})",

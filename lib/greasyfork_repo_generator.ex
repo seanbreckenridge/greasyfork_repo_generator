@@ -35,21 +35,17 @@ defmodule GreasyforkRepoGenerator.UserScript do
   Else, return the userscript
   """
   def is_valid(userscript, ignore_ids) do
-    case has_code?(userscript) do
+    if has_code?(userscript) do
       # if user said to explicitly ignore this script
-      true ->
-        case Map.get(userscript, "script_id") in ignore_ids do
-          true ->
-            IO.puts(:stderr, "'#{name(userscript)}' in --ignore-list, removing...")
-            :error
-
-          false ->
-            userscript
-        end
-
-      false ->
-        IO.puts(:stderr, "'#{name(userscript)}' has no code, removing...")
+      if Map.get(userscript, "script_id") in ignore_ids do
+        IO.puts(:stderr, "'#{name(userscript)}' in --ignore-list, removing...")
         :error
+      else
+        userscript
+      end
+    else
+      IO.puts(:stderr, "'#{name(userscript)}' has no code, removing...")
+      :error
     end
   end
 end
