@@ -36,7 +36,7 @@ defmodule GreasyforkRepoGenerator.Template do
     | --- | --- | --- | --- |
     #{userscript_table_rows_str}
 
-    ###### Created with [greasyfork_repo_generator](https://github.com/seanbreckenridge/greasyfork_repo_generator)
+    ###### Created with [greasyfork_repo_generator](https://gitlab.com/seanbreckenridge/greasyfork_repo_generator)
     """
   end
 
