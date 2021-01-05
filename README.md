@@ -2,11 +2,11 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-Archives a users Greasyfork account and creates a git repo which contains each script/metadata as the `README`. See [here](https://gitlab.com/seanbreckenridge/greasyfork) for example output.
+Archives a users Greasyfork account and creates a git repo which contains each script/metadata as the `README`. See [here](https://github.com/seanbreckenridge/greasyfork) for example output.
 
 ```
 Archives a users Greasyfork account and creates a Github repo 0.1.0
-Sean Breckenridge gitlab.com/seanbreckenridge
+Sean Breckenridge github.com/seanbreckenridge
 
 USAGE:
     greasyfork_repo_generator --json INPUT_JSON_FILE [--ignore-ids IGNORE_SCRIPT_IDS] [--output-dir OUTPUT_DIR]
@@ -26,7 +26,7 @@ Requires: `elixir`, `python3`
 
 ```
 pip3 install --user greasyfork_archive
-git clone https://gitlab.com/seanbreckenridge/greasyfork_repo_generator
+git clone https://github.com/seanbreckenridge/greasyfork_repo_generator
 cd greasyfork_repo_generator
 greasyfork_archive <YOUR_GREASYFORK_USER_ID> --output-file scraped_data.json
 mix deps.get

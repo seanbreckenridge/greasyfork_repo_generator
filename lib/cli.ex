@@ -6,7 +6,7 @@ defmodule GreasyforkRepoGenerator.CLI do
     Optimus.new!(
       name: "greasyfork_repo_generator",
       description: "Archives a users Greasyfork account and creates a git repo",
-      author: "Sean Breckenridge gitlab.com/seanbreckenridge",
+      author: "Sean Breckenridge github.com/seanbreckenridge",
       version: "0.1.0",
       allow_unknown_args: false,
       parse_double_dash: true,
@@ -70,7 +70,11 @@ defmodule GreasyforkRepoGenerator.CLI do
     # make sure directory exists
     if File.exists?(args.options.output_dir) do
       unless File.dir?(args.options.output_dir) do
-      IO.puts(:stderr, "#{args.options.output_dir |> Path.expand()} already exists but isn't a directory")
+        IO.puts(
+          :stderr,
+          "#{args.options.output_dir |> Path.expand()} already exists but isn't a directory"
+        )
+
         exit(1)
       end
     else
@@ -88,6 +92,10 @@ defmodule GreasyforkRepoGenerator.CLI do
     userscripts
     |> Enum.map(&Template.create_script(&1, args.options.output_dir))
 
-    IO.puts("Created #{userscripts |> length()} userscript files at #{args.options.output_dir |> Path.expand()}")
+    IO.puts(
+      "Created #{userscripts |> length()} userscript files at #{
+        args.options.output_dir |> Path.expand()
+      }"
+    )
   end
 end
