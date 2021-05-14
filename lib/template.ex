@@ -28,8 +28,6 @@ defmodule GreasyforkRepoGenerator.Template do
     """
     # Greasyfork
 
-    [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
     An archive of my greasyfork scripts.
 
     | Script | Description | Total Installs | URL |
