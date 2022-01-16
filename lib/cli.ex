@@ -82,13 +82,11 @@ defmodule GreasyforkRepoGenerator.CLI do
       IO.puts("Created directory #{args.options.output_dir |> Path.expand()}")
     end
 
-    # create README
-    readme_contents = Template.readme(userscripts)
-
+    # write README
     Path.join(args.options.output_dir, "README.md")
-    |> File.write!(readme_contents)
+    |> File.write!(Template.readme(userscripts))
 
-    # write to README/script files
+    # write to script files
     userscripts
     |> Enum.map(&Template.create_script(&1, args.options.output_dir))
 
